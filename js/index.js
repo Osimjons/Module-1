@@ -25,14 +25,14 @@
   );
 }
 /*Тема 3*/
-{
-  const product = prompt(`Введите наименование товара `);
-  const count = +prompt(`Введите количество товара `);
-  const category = prompt(`Название категории `);
-  const price = +prompt(`Введите цену товара `);
-  console.log(
-    `На складе у нас ${count} шт ${product} что входит в категорию ${category} на сумму ${
-      price * count
-    } ₽ `
-  );
-}
+// {
+//   const product = prompt(`Введите наименование товара `);
+//   const count = +prompt(`Введите количество товара `);
+//   const category = prompt(`Название категории `);
+//   const price = +prompt(`Введите цену товара `);
+//   console.log(
+//     `На складе у нас ${count} шт ${product} что входит в категорию ${category} на сумму ${
+//       price * count
+//     } ₽ `
+//   );
+// }
