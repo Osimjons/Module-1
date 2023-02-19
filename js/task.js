@@ -17,7 +17,7 @@
     rus = +prompt("Введите баллы по Русскому языку"),
     it = +prompt("Введите баллы по Информатике");
 
-  if (isNaN(mat, rus, it)) {
+  if (isNaN(mat) || isNaN(rus) || isNaN(it)) {
     alert("Вы ввели непривилье значение, повторите еще раз");
   } else {
     const res = mat + rus + it;
@@ -26,6 +26,7 @@
     } else {
       alert(`Увы, немножко не хватило :( `);
     }
+    console.log('res: ', res);
   }
 }
 {
