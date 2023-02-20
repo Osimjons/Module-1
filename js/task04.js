@@ -1,24 +1,17 @@
-"use strict";
-/*Четвертая задача:*/
+"use stict";
 
-// let cart = (n) => {
-//   if (Number.isNaN(parseFloat(n))) {
-//     n >= 10;
-//     return n * 0.03;
-//   }
-// };
-// cart();
-// console.log("cart: ", cart(11));
-
-const calculate = (cart, summ, promo) => {
-  if (Number.isNaN(parseFloat(cart || summ || promo))) {
-    cart >= 10;
-    return summ * 0.03;
-  } else if (summ >= 30000) {
-    return summ * 1.5;
-  } else if (promo === "METHED") {
-    return summ * 0.1;
+const calculate = (totalPrice, numItems, promoCode) => {
+  if (numItems > 10) {
+    totalPrice *= 0.97;
   }
+  if (totalPrice > 30000) {
+    totalPrice -= 0.15 * (totalPrice - 30000);
+  }
+  if (promoCode === "METHED") {
+    totalPrice *= 0.9;
+  } else if (promoCode === "G3H2Z1" && totalPrice > 2000) {
+    totalPrice -= 500;
+  }
+  return totalPrice;
 };
-calculate();
-console.log("calculate: ", calculate(11, 31000, "METHED"));
+console.log(calculate(40000, 12, "METHED"));
