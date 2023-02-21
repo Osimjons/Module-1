@@ -1,8 +1,7 @@
 "use strict";
-/*Задача №2*/ 
+/*Задача №2*/
 const anyWords = (str) => {
-  str = str[0].toUpperCase() + str.slice(1).toLowerCase();
-  console.log("str: ", str);
-  alert(`Вы ввели , ${str}`);
+  let newStr = str[0].toUpperCase() + str.slice(1).toLowerCase();
+  return newStr;
 };
-anyWords(prompt('Введите свое сообщение:'));
+console.log("anyWords: ", anyWords("Введите свое сообщение:"));

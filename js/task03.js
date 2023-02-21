@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
+let str = prompt("Введите сообщение");
 const anyWords = (string) => {
-  string =
-    string.split("").reverse("").join("");
-  console.log("string: ", string);
-  alert(`Вы ввели , ${string}`);
+  return string.split("").reverse("").join("");
 };
-anyWords(prompt('Введите сообщение'));
+const res = anyWords(str);
+console.log("res: ", res);
+console.log("anyWords: ", anyWords("привет "));
