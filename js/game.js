@@ -2,7 +2,6 @@
 const game = () => {
   const number = Math.floor(Math.random() * 100) + 1;
   let guess;
-
   const checkInput = (input) => {
     if (input === null) {
       return null;
@@ -16,12 +15,12 @@ const game = () => {
 
   const play = () => {
     guess = +prompt("Угадай число от 1 до 100");
-    if (checkInput(guess) === null) {
-      console.log("Игра окончена!");
+    if (isNaN(guess)) {
+      alert('Вы ввели не число! Попробуйте снова ')
+      play();
       return;
     }
     guess = parseInt(guess);
-
     if (guess > number) {
       console.log("Меньше!");
       play();
@@ -37,4 +36,3 @@ const game = () => {
 };
 
 game();
-
