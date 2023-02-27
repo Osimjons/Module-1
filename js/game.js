@@ -6,29 +6,29 @@ const game = () => {
     if (input === null) {
       return null;
     }
-    if (Number.isNaN(input) || input.trim() === "") {
-      console.log("Введи число!");
+    if (isNaN(input) || input.trim() === "") {
+      alert("Введи число!");
       return false;
     }
     return true;
   };
 
   const play = () => {
-    guess = +prompt("Угадай число от 1 до 100");
-    if (isNaN(guess)) {
-      alert('Вы ввели не число! Попробуйте снова ')
+    guess = prompt("Угадай число от 1 до 100");
+    console.log("guess: ", guess);
+    if (!checkInput(guess)) {
       play();
       return;
     }
     guess = parseInt(guess);
     if (guess > number) {
-      console.log("Меньше!");
+      alert("Меньше!");
       play();
     } else if (guess < number) {
-      console.log("Больше!");
+      alert("Больше!");
       play();
     } else {
-      console.log("Правильно!");
+      alert("Правильно!");
     }
   };
 
