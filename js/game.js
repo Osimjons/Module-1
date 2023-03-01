@@ -4,9 +4,10 @@ const game = () => {
   let guess;
   const checkInput = (input) => {
     if (input === null) {
+      alert("Игра окончена!");
       return null;
     }
-    if (isNaN(input) || input.trim() === "") {
+    if (Number.isNaN(input) || input.trim() === "") {
       alert("Введи число!");
       return false;
     }
@@ -17,10 +18,14 @@ const game = () => {
     guess = prompt("Угадай число от 1 до 100");
     console.log("guess: ", guess);
     if (!checkInput(guess)) {
-      play();
       return;
     }
     guess = parseInt(guess);
+    if (isNaN(guess)) {
+      alert("Вы ввели не число! Попробуйте снова ");
+      play();
+      return;
+    }
     if (guess > number) {
       alert("Меньше!");
       play();
